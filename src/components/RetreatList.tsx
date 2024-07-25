@@ -123,8 +123,12 @@ const RetreatList: React.FC = () => {
           ))}
         </div>
       ) : (
-        <div className="text-center mt-4">
-          <p>No retreats found.</p>
+        <div className="flex flex-col items-center justify-center p-2 text-center mt-4">
+          <p>No more retreats found.</p>
+          <img
+            src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExb21ieDgxaXFiNWg0NGJncmFpM2tmMmd4cnZ4dDdsdTFzOHBvOXUzNSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l4EoZ1rJtDfypcna8/giphy.gif"
+            className="lg:w-[25rem] rounded-full mt-4"
+          />
         </div>
       )}
       {retreats.length > 0 && (
