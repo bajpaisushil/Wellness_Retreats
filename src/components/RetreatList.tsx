@@ -21,6 +21,7 @@ const RetreatList: React.FC = () => {
   const [error, setError] = useState<string | null>(null);
   const [totalPages, setTotalPages] = useState(1);
   const [debouncedSearch, setDebouncedSearch]=useState(search);
+  const [loading, setLoading]=useState(true);
 
   useEffect(()=>{
     const timeoutId=setTimeout(()=>{
@@ -69,6 +70,7 @@ const RetreatList: React.FC = () => {
         setError("An error occurred while fetching retreats.");
         setRetreats([]);
       }
+      setLoading(false);
     };
 
     const fetchTotalCount = async (): Promise<number> => {
@@ -88,10 +90,17 @@ const RetreatList: React.FC = () => {
   }, [filters, debouncedSearch, page]);
 
   const handlePageChange = (newPage: number) => {
+    setLoading(true);
     if (newPage >= 1 && newPage <= totalPages) {
       setPage(newPage);
     }
   };
+
+  if(loading){
+    return <div className="w-fit m-auto p-40">
+      <h1 className="text-[1.2rem] font-semibold">Loading...</h1>
+    </div>
+  }
 
   return (
     <div className="p-4">
