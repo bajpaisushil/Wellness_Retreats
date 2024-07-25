@@ -19,7 +19,7 @@ const RetreatCard: React.FC<RetreatCardProps> = ({ retreat }) => {
       <img
         src={retreat.image}
         alt={retreat.title}
-        className="w-full h-[12rem] rounded-xl lg:w-[60%] mb-2"
+        className="w-full h-[12rem] rounded-3xl lg:w-[60%] mb-2"
       />
       <div className="p-4">
         <h2 className="text-xl font-semibold mb-2">{retreat.title}</h2>
