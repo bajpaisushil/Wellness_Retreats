@@ -97,7 +97,7 @@ const RetreatList: React.FC = () => {
   };
 
   if(loading){
-    return <div className="w-fit m-auto p-40">
+    return <div className="w-fit m-auto p-20">
       <h1 className="text-[1.2rem] font-semibold">Loading...</h1>
     </div>
   }
